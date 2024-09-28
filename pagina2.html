@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCF Game - Conta Grátis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+        .hidden {
+            display: none;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #0f0;
+            border: none;
+            cursor: pointer;
+        }
+        .ad-space {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #222;
+            border: 2px dashed #0f0;
+        }
+        .step-counter {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>LCF Game - Obtenha Sua Conta Grátis</h1>
+    <p>Somos uma empresa capaz de fornecer 3 contas gratuitas por dia entrando na nossa comunidade VIP. Siga os passos abaixo para obter a sua conta!</p>
+    
+    <!-- Imagem hospedada no Dropbox -->
+    <img src="https://www.dropbox.com/s/yourfile/image.jpg?raw=1" alt="Conta Grátis" style="max-width: 100%; height: auto;">
+    
+    <p>Clique no anúncio abaixo e retorne para desbloquear o próximo passo.</p>
+
+    <!-- Anúncio -->
+    <div class="ad-space">
+        <!-- Aqui você insere o código do seu anúncio -->
+        <p>Anúncio vai aqui</p>
+    </div>
+
+    <!-- Botão para desbloquear o próximo passo -->
+    <button id="adClickedBtn" class="btn hidden">Clique aqui para desbloquear o próximo passo</button>
+
+    <!-- Seção que será desbloqueada após clicar -->
+    <div id="downloadSection" class="hidden">
+        <p>Parabéns! Agora você pode acessar o próximo passo.</p>
+        <a href="pagina3.html" class="btn">Próxima Página</a>
+    </div>
+
+    <!-- Contador de passos -->
+    <div id="stepCounter" class="step-counter">
+        [2/6 PASSOS]
+    </div>
+
+    <script>
+        // Simulação de clique no anúncio e desbloqueio
+        document.querySelector('.ad-space').addEventListener('click', function() {
+            // Após o clique, exibe o botão de desbloqueio
+            document.getElementById('adClickedBtn').classList.remove('hidden');
+        });
+
+        document.getElementById('adClickedBtn').addEventListener('click', function() {
+            // Desbloqueia a seção de download e oculta o botão de desbloqueio
+            document.getElementById('downloadSection').classList.remove('hidden');
+            document.getElementById('adClickedBtn').classList.add('hidden');
+
+            // Atualiza o contador para 2/6
+            document.getElementById('stepCounter').textContent = '[2/6 PASSOS]';
+        });
+    </script>
+</body>
+</html>
